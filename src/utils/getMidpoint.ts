@@ -1,4 +1,4 @@
-import {Point} from "../interfaces/Geometry";
+import {Point} from '../interfaces/Geometry';
 
 /**
  * Finds the midpoint of two given points.

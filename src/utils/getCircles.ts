@@ -1,6 +1,7 @@
-import Decimal from "decimal.js";
-import {Circle, Point} from "../interfaces/Geometry";
-import {getMidpoint} from "./getMidpoint";
+import Decimal from 'decimal.js';
+
+import {Circle, Point} from '../interfaces/Geometry';
+import {getMidpoint} from './getMidpoint';
 
 /**
  * Finds two possible circles passing through two given points (A and B),
@@ -21,7 +22,7 @@ export function getCircles(
   alpha: Decimal,
 ): Circle[] {
   if (alpha.equals(0) || alpha.equals(Math.PI)) {
-    throw new Error("Invalid angle");
+    throw new Error('Invalid angle');
   }
 
   const midPoint = getMidpoint(point1, point2);

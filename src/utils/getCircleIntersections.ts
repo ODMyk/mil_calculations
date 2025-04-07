@@ -1,5 +1,5 @@
-import {Circle, Point} from "interfaces/Geometry";
-import Decimal from "decimal.js";
+import Decimal from 'decimal.js';
+import {Circle, Point} from 'interfaces/Geometry';
 
 /**
  * Finds the intersection points of two given circles.
@@ -7,8 +7,8 @@ import Decimal from "decimal.js";
  * @param {Circle} circle1 - The first circle.
  * @param {Circle} circle2 - The second circle.
  *
- * @returns {Point[] | null} The points of intersection (0, 1, or 2).
- *                    If the circles are identical, returns `null` (all points intersect).
+ * @returns {Point[]} The points of intersection (0, 1, or 2).
+ *                    If the circles are identical, throws.
  *                    If the circles do not intersect, returns an empty array.
  */
 export function getCircleIntersections(
@@ -23,7 +23,7 @@ export function getCircleIntersections(
     r2 = circle2.radius;
 
   if (x1.equals(x2) && y1.equals(y2) && r1.equals(r2)) {
-    return null; // Identical circles, so all the points are the point of intersection
+    throw new Error('Identical circles');
   }
 
   const dx = x2.sub(x1);
